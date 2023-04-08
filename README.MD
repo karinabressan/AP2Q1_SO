@@ -63,10 +63,10 @@ Tarefas:
 [x] - Utilizar o usuario corrente caso não seja informado um usuario por argumento ou o usuario do argumento nao existir
 [x] - Criar arquivo
 [x] - Criar arquivo com padrão de nome <AAAAMMDD>_Processos_<usuário>.csv
-[ ] - Ao criar o arquivo, escrever o cabeçalho de acordo com a obs 3
-[ ] - Verificar se um arquivo com um determinado nome ja existe
-[ ] - Caso o arquivo exista, escrever no final adicionando uma linha
-[ ] - Escrever no arquivo com o formato do item II.
+[x] - Ao criar o arquivo, escrever o cabeçalho de acordo com a obs 3
+[x] - Verificar se um arquivo com um determinado nome ja existe
+[x] - Caso o arquivo exista, escrever no final adicionando uma linha
+[x] - Escrever no arquivo com o formato do item II.
 [ ] - Obter numero total de processos ativos no sistema
 [ ] - Obter Numero de processos ativos do usuario
 [ ] - Obter quantidade total de threads dos processos do usuario (cada processo tem threads, somar todas)
