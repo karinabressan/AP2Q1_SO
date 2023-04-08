@@ -61,6 +61,7 @@ Tarefas:
 [x] - Verificar se o usuario recebido como argumento existe
 [x] - Obter o usuario corrente.
 [x] - Utilizar o usuario corrente caso não seja informado um usuario por argumento ou o usuario do argumento nao existir
+[ ] - Criar arquivo
 [ ] - Criar arquivo com padrão de nome <AAAAMMDD>_Processos_<usuário>.csv
 [ ] - Ao criar o arquivo, escrever o cabeçalho de acordo com a obs 3
 [ ] - Verificar se um arquivo com um determinado nome ja existe
