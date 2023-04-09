@@ -1,2 +1,3 @@
 Número total de processos ativos no sistema,Número de processos ativos do usuário,Quantidade total de threads dos processos do usuário,Processo mais antigo do usuário,Nome do usuário corrente,Quantidade de processos sendo executados, excluindo-se os do usuário corrente,Quantidade de processos sendo executados como root
 29,10,11,1,root,19,19
+29,10,11,1,root,19,19

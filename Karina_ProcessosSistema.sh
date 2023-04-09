@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# Aluna: Karina Bressan Felicetti
+
 usuarioArgumento=$1
-# $USER obtem o usuario atual
+# $USER obtém o usuario atual
 usuarioAtual=$USER
 
 # Se o usuário do argumento existe, será utilizado.
