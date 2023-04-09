@@ -12,7 +12,6 @@ if id -u "$usuarioArgumento" > /dev/null 2>&1; then
 # Se o usuário do argumento não existir ou não for informado, será utilizado o usuário atual.
 else
         usuario=$usuarioAtual
-        
 fi
 
 # Variável para guardar a informação da data atual
@@ -39,6 +38,7 @@ procExecutados=$((processosAtivoSis-processosAtivosUser))
 procRoot=$(ps -f -u root | wc -l)
 procExecutadosRoot=$((processosAtivoSis-procRoot))
 
+# Criando o arquivo .csv com as respectivas variáveis de cada item
 informacoes=$processosAtivoSis","$processosAtivosUser","$qtdThreadUser","$procMaisAntigo","$nomeUserCorrente","$procExecutados","$procExecutadosRoot
 
 # Se o arquivo para o usuário e data já existe...
