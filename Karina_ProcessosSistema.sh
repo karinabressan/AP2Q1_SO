@@ -22,9 +22,9 @@ cabecalho="Número total de processos ativos no sistema,Número de processos ati
 
 # Declaração das variáveis dos itens
 # a) Número total de processos ativos no sistema
-processosAtivoSis=1
+processosAtivoSis=$(ps ax | wc -l)
 # b) Número de processos ativos do usuário.
-processosAtivosUser=2
+processosAtivosUser=$(ps -f -u $usuario | wc -l)
 # c) Quantidade total de threads dos processos do usuário.
 qtdThreadUser=3
 # d) Processo mais antigo do usuário.

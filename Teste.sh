@@ -11,11 +11,11 @@ cabecalho="Número total de processos ativos no sistema,Número de processos ati
 
 # Declaração das variáveis dos itens
 # a) Número total de processos ativos no sistema
-processosAtivoSis=1
+processosAtivoSis=$(ps ax | wc -l)
 # b) Número de processos ativos do usuário.
-processosAtivosUser=2
+processosAtivosUser=$(ps -f -u $usuario | wc -l)
 # c) Quantidade total de threads dos processos do usuário.
-qtdThreadUser=3
+qtdThreadUser=$(ps -eo nlwp | tail -n +2 | awk '{ num_threads += $1 } END { print num_threads }')
 # d) Processo mais antigo do usuário.
 procMaisAntigo=4
 # e) Nome do usuário corrente.
@@ -39,4 +39,6 @@ fi
 
 # sessao de teste  
 
-echo "nome usuario= $nomeUserCorrente"
+echo "numero processos usuario= $processosAtivosUser"
+echo "numero processos sistema= $processosAtivoSis"
+echo "numero threads= $qtdThreadUser"
