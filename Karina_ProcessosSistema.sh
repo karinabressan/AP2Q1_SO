@@ -28,13 +28,14 @@ processosAtivosUser=$(ps -f -u $usuario | wc -l)
 # c) Quantidade total de threads dos processos do usuário.
 qtdThreadUser=3
 # d) Processo mais antigo do usuário.
-procMaisAntigo=4
+procMaisAntigo=$(ps aux --sort=start_time | awk 'NR==2{print $2}')
 # e) Nome do usuário corrente.
 nomeUserCorrente=$usuario
 # f) Quantidade de processos sendo executados, excluindo-se os do usuário corrente.
-procExecutados=6
+procExecutados=$((processosAtivoSis-processosAtivosUser))
 # g) Quantidade de processos sendo executados como root.
-procExecutadosRoot=7
+procRoot=$(ps -f -u root | wc -l)
+procExecutadosRoot=$((processosAtivoSis-procRoot))
 
 informacoes=$processosAtivoSis","$processosAtivosUser","$qtdThreadUser","$procMaisAntigo","$nomeUserCorrente","$procExecutados","$procExecutadosRoot
 

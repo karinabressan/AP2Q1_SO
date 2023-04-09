@@ -67,10 +67,10 @@ Tarefas:
 [x] - Verificar se um arquivo com um determinado nome ja existe
 [x] - Caso o arquivo exista, escrever no final adicionando uma linha
 [x] - Escrever no arquivo com o formato do item II.
-[ ] - Obter numero total de processos ativos no sistema
-[ ] - Obter Numero de processos ativos do usuario
+[x] - Obter numero total de processos ativos no sistema
+[x] - Obter Numero de processos ativos do usuario
 [ ] - Obter quantidade total de threads dos processos do usuario (cada processo tem threads, somar todas)
-[ ] - Obter processo mais antigo do usuário
-[ ] - Obter quantidade de processos sendo executados, excluindo-se os do usuário corrente.
-[ ] - Obter quantidade de processos sendo executados como root
-[ ] - Refatorar a escrita no arquivo para utilizar as informacoes reais.
+[x] - Obter processo mais antigo do usuário
+[x] - Obter quantidade de processos sendo executados, excluindo-se os do usuário corrente.
+[x] - Obter quantidade de processos sendo executados como root
+[x] - Refatorar a escrita no arquivo para utilizar as informacoes reais.

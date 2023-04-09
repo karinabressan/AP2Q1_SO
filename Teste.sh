@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+#resultado=$((5 * 5))
+#echo $resultado
+#exit
+
+
 usuario=$USER
 
 # Variável para guardar a informação da data atual
@@ -16,14 +22,15 @@ processosAtivoSis=$(ps ax | wc -l)
 processosAtivosUser=$(ps -f -u $usuario | wc -l)
 # c) Quantidade total de threads dos processos do usuário.
 qtdThreadUser=$(ps -eo nlwp | tail -n +2 | awk '{ num_threads += $1 } END { print num_threads }')
-# d) Processo mais antigo do usuário.
-procMaisAntigo=4
+# d) Processo mais antigo do usuário (PID do processo mais antigo).
+procMaisAntigo=$(ps aux --sort=start_time | awk 'NR==2{print $2}')
 # e) Nome do usuário corrente.
 nomeUserCorrente=$usuario
 # f) Quantidade de processos sendo executados, excluindo-se os do usuário corrente.
-procExecutados=6
+procExecutados=$((processosAtivoSis-processosAtivosUser))
 # g) Quantidade de processos sendo executados como root.
-procExecutadosRoot=7
+procRoot=$(ps -f -u root | wc -l)
+procExecutadosRoot=$((processosAtivoSis-procRoot))
 
 informacoes=$processosAtivoSis","$processosAtivosUser","$qtdThreadUser","$procMaisAntigo","$nomeUserCorrente","$procExecutados","$procExecutadosRoot
 
@@ -40,5 +47,9 @@ fi
 # sessao de teste  
 
 echo "numero processos usuario= $processosAtivosUser"
-echo "numero processos sistema= $processosAtivoSis"
+echo "numero processos sistema= $processosAtivoSis "
+echo "root processes $procRoot"
 echo "numero threads= $qtdThreadUser"
+echo "PID processo mais antigo= $procMaisAntigo"
+echo "processos menos os do usuario corrente= $procExecutados"
+echo "processos menos os do usuario root= $procExecutadosRoot"
