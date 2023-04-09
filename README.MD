@@ -69,7 +69,7 @@ Tarefas:
 [x] - Escrever no arquivo com o formato do item II.
 [x] - Obter numero total de processos ativos no sistema
 [x] - Obter Numero de processos ativos do usuario
-[ ] - Obter quantidade total de threads dos processos do usuario (cada processo tem threads, somar todas)
+[x] - Obter quantidade total de threads dos processos do usuario (cada processo tem threads, somar todas)
 [x] - Obter processo mais antigo do usuário
 [x] - Obter quantidade de processos sendo executados, excluindo-se os do usuário corrente.
 [x] - Obter quantidade de processos sendo executados como root

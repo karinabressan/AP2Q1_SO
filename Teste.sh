@@ -21,7 +21,7 @@ processosAtivoSis=$(ps ax | wc -l)
 # b) Número de processos ativos do usuário.
 processosAtivosUser=$(ps -f -u $usuario | wc -l)
 # c) Quantidade total de threads dos processos do usuário.
-qtdThreadUser=$(ps -eo nlwp | tail -n +2 | awk '{ num_threads += $1 } END { print num_threads }')
+qtdThreadUser=$(ps -Lf -u $usuario | wc -l)
 # d) Processo mais antigo do usuário (PID do processo mais antigo).
 procMaisAntigo=$(ps aux --sort=start_time | awk 'NR==2{print $2}')
 # e) Nome do usuário corrente.
@@ -49,7 +49,7 @@ fi
 echo "numero processos usuario= $processosAtivosUser"
 echo "numero processos sistema= $processosAtivoSis "
 echo "root processes $procRoot"
-echo "numero threads= $qtdThreadUser"
+echo "numero threads do usuario= $qtdThreadUser"
 echo "PID processo mais antigo= $procMaisAntigo"
 echo "processos menos os do usuario corrente= $procExecutados"
 echo "processos menos os do usuario root= $procExecutadosRoot"
